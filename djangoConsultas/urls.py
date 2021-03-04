@@ -28,4 +28,5 @@ urlpatterns = [
     path('visulizador/', HomeView.visualizar, name='visualizar'),
     path('registrarAlumnos/', FormularioAlumnosView.index, name='registrarAlumnos'),
     path('guardarAlumnos/', FormularioAlumnosView.ProcesarFormulario, name='guardarAlumnos'),
+    path('listarAlumnos/', FormularioAlumnosView.ListarAlumnos, name='listarAlumnos'),
 ]

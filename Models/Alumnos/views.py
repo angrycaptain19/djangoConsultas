@@ -2,17 +2,21 @@ from django.http import HttpRequest
 from django.shortcuts import render
 
 from Models.Alumnos.forms import FormularioAlumnos
-
+from Models.Alumnos.models import Alumnos
 
 class FormularioAlumnosView(HttpRequest):
     def index(request):
-        Alumnos = FormularioAlumnos()
-        return render(request, "registroAlumnos.html", {"form":Alumnos})
+        alumnos = FormularioAlumnos()
+        return render(request, "registroAlumnos.html", {"form":alumnos})
 
     def ProcesarFormulario(request):
-        Alumnos = FormularioAlumnos(request.POST)
-        if Alumnos.is_valid():
-            Alumnos.save()
-            Alumnos = FormularioAlumnos()
+        alumnos = FormularioAlumnos(request.POST)
+        if alumnos.is_valid():
+            alumnos.save()
+            alumnos = FormularioAlumnos()
 
-        return render(request, "registroAlumnos.html", {"form":Alumnos, "mensaje": 'Okay guardado'})
+        return render(request, "registroAlumnos.html", {"form":alumnos, "mensaje": 'Okay guardado'})
+
+    def ListarAlumnos(request):
+        alumnos = Alumnos.objects.all()
+        return render(request, "listarAlumnos.html", {"alumnos": alumnos})
