@@ -8,6 +8,11 @@
     <div class="row col-12 justify-content-end mb-2 pr-0">
         <a class="btn btn-success" href="{% url 'registrarAlumnos' %}">Agregar nuevo alumno</a>
     </div>
+    {% if mensaje %}
+            <div class="alert alert-danger" role="alert">
+              Alumno eliminado exitosamente
+            </div>
+        {% endif %}
     <table class="table">
       <thead class="thead-dark">
         <tr>
@@ -29,8 +34,8 @@
             <td>{{ alumno.apellido }}</td>
             <td>{{ alumno.edad }}</td>
             <td>{{ alumno.sede }}</td>
-            <td><a class="btn btn-warning" href="#">Editar</a></td>
-            <td><a class="btn btn-danger" href="#">Eliminar</a></td>
+            <td><a class="btn btn-warning" href="{% url 'editarAlumnos' alumno.id %}">Editar</a></td>
+            <td><a class="btn btn-danger" href="{% url 'eliminarAlumnos' alumno.id %}">Eliminar</a></td>
         </tr>
       {% endfor %}
       </tbody>

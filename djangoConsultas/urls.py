@@ -24,9 +24,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.home, name='home'),
     path('alumnos/', HomeView.alumnos, name='alumnos'),
-    path('temperatura/', HomeView.temperatura, name='temp'),
-    path('visulizador/', HomeView.visualizar, name='visualizar'),
     path('registrarAlumnos/', FormularioAlumnosView.index, name='registrarAlumnos'),
     path('guardarAlumnos/', FormularioAlumnosView.ProcesarFormulario, name='guardarAlumnos'),
     path('listarAlumnos/', FormularioAlumnosView.ListarAlumnos, name='listarAlumnos'),
+    path('editarAlumnos/<int:id_alumnos>', FormularioAlumnosView.edit, name='editarAlumnos'),
+    path('actualizarAlumnos/<int:id_alumnos>', FormularioAlumnosView.ActualizarAlumno, name='actualizarAlumnos'),
+    path('eliminarAlumnos/<int:id_alumnos>', FormularioAlumnosView.delete, name='eliminarAlumnos'),
 ]

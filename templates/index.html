@@ -7,27 +7,25 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
-    <title>Universidad Solopa</title>
+    <title>UMG Puerto Barrios</title>
 </head>
 
 <body>
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>Universidad Mariano Galvez de Guatemala</h1>
+  <p>Proyecto de Josue David Belteton Garcia ::: Carnet 0909-19-12967</p>
+</div>
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
       <a class="navbar-brand" href="{% url 'home' %}">UMG Barrios</a>
 
       <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                Formularios
-              </a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="{% url 'registrarAlumnos' %}">Registrar alumnos</a>
-                <a class="dropdown-item" href="{% url 'listarAlumnos' %}">Visualizar</a>
-              </div>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'registrarAlumnos' %}">Registrar alumnos</a>
+            </li>
 
-        <li class="nav-item">
-          <a class="nav-link" href="{% url 'visualizar' %}">Visualizar registros</a>
-        </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'listarAlumnos' %}">Visualizar registros</a>
+            </li>
       </ul>
     </nav>
 
