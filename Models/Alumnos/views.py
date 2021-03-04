@@ -10,7 +10,7 @@ class FormularioAlumnosView(HttpRequest):
         return render(request, "registroAlumnos.html", {"form":Alumnos})
 
     def ProcesarFormulario(request):
-        Alumnos = FormularioAlumnos()
+        Alumnos = FormularioAlumnos(request.POST)
         if Alumnos.is_valid():
             Alumnos.save()
             Alumnos = FormularioAlumnos()
